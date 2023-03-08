@@ -47,7 +47,7 @@ if(passengerAge < discountUnderage){
 
 
 //print the priceFinal in human formt with two decimals
-priceFinal = messageDiscount + " thank you for choosing us:" + '' + priceTicket.toFixed(2) + " €";
+priceFinal = messageDiscount + " thank you for choosing us:" + ' ' + priceTicket.toFixed(2) + " €";
 console.log(priceFinal);
 
 document.getElementById("ticket").innerHTML = priceFinal;
