@@ -10,18 +10,44 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 const numberKm
 const passengerAge
-let priceTicket (0.21€ km)
-const discountUnderage  (*.20)
-const discountAdult (*0.40)
+let priceTicket (0.21€)
+const discountUnderage  (*0.2)
+const discountOverSixtyFive (*0.4)
 let priceFinal in output
 */
 
 //const numberKm in input prompt
-const numberKm = prompt("Enter the distance to travel in km")
+const numberKm = parseFloat(prompt("Enter the distance to travel in km"));
 
 //const passenger in input prompt
-const passengerAge= prompt("Please enter your age")
+const passengerAge= parseInt(prompt("Please enter your age"));
 
 //let priceTicket
+let priceTicket = numberKm * 0.21;
 
-//if priceTicket for Underage
+//const discountUnderage
+const discountUnderage = 18;
+
+//const discountOverSixtyFive
+const discountOverSixtyFive = 65;
+
+//let messageDiscount
+let messageDiscount;
+
+//Apply discount for Underage and  OverSixtyFive
+if(passengerAge < discountUnderage){
+    messageDiscount = "The discount has been applied to your ticket,";
+    priceTicket *= 0.2;
+} else if(passengerAge >= discountOverSixtyFive){
+    priceTicket *= 0.4;
+} else{
+    messageDiscount = "No discount has been applied to your ticket,";
+    console.log(messageDiscount);
+}
+
+
+//print the priceFinal in human formt with two decimals
+priceFinal = messageDiscount + " thank you for choosing us:" + ' ' + priceTicket.toFixed(2) + " €";
+console.log(priceFinal);
+
+document.getElementById("ticket").innerHTML = priceFinal;
