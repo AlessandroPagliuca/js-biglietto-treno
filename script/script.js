@@ -17,7 +17,7 @@ let priceFinal in output
 */
 
 //const numberKm in input prompt
-const numberKm = parseFloat(prompt("Enter the distance to travel in km"));
+const numberKm = prompt("Enter the distance to travel in km");
 
 //const passenger in input prompt
 const passengerAge= parseInt(prompt("Please enter your age"));
