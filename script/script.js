@@ -35,19 +35,25 @@ const discountOverSixtyFive = 65;
 let messageDiscount;
 
 //Apply discount for Underage and  OverSixtyFive
-if(passengerAge < discountUnderage){
-    priceTicket *= 0.2;
-    messageDiscount = "The discount has been applied to your ticket,";
-} else if(passengerAge >= discountOverSixtyFive){
-    priceTicket *= 0.4;
-    messageDiscount = "The discount has been applied to your ticket,";
+if(!isNaN(numberKm) && !isNaN(passengerAge)){
+    if(passengerAge < discountUnderage){
+        priceTicket *= 0.2;
+        messageDiscount = 'The discount has been applied to your ticket,' + 'thank you for choosing us:' + ' ' + priceTicket.toFixed(2) + '€';
+    } else if(passengerAge >= discountOverSixtyFive){
+        priceTicket *= 0.4;
+        messageDiscount = 'The discount has been applied to your ticket,' + 'thank you for choosing us:' + ' ' + priceTicket.toFixed(2) + '€';
+    } else{
+        messageDiscount = 'No discount has been applied to your ticket,' + ' ' + priceTicket.toFixed(2) + '€';
+    }
+
 } else{
-    messageDiscount = "No discount has been applied to your ticket,";
+    messageDiscount = "Invalid data entered, please try again";
 }
 
 
+
 //print the priceFinal in human format with two decimals
-let priceFinal = messageDiscount + " thank you for choosing us:" + ' ' + priceTicket.toFixed(2) + " €";
+let priceFinal = messageDiscount;
 console.log(priceFinal);
 
 document.getElementById("ticket").innerHTML = priceFinal;
