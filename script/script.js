@@ -20,7 +20,7 @@ let priceFinal in output
 const numberKm = prompt("Enter the distance to travel in km");
 
 //const passenger in input prompt
-const passengerAge= parseInt(prompt("Please enter your age"));
+const passengerAge= prompt("Please enter your age");
 
 //let priceTicket
 let priceTicket = numberKm * 0.21;
