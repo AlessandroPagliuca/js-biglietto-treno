@@ -36,18 +36,18 @@ let messageDiscount;
 
 //Apply discount for Underage and  OverSixtyFive
 if(passengerAge < discountUnderage){
-    messageDiscount = "The discount has been applied to your ticket,";
     priceTicket *= 0.2;
+    messageDiscount = "The discount has been applied to your ticket,";
 } else if(passengerAge >= discountOverSixtyFive){
     priceTicket *= 0.4;
+    messageDiscount = "The discount has been applied to your ticket,";
 } else{
     messageDiscount = "No discount has been applied to your ticket,";
-    console.log(messageDiscount);
 }
 
 
 //print the priceFinal in human formt with two decimals
-priceFinal = messageDiscount + " thank you for choosing us:" + ' ' + priceTicket.toFixed(2) + " €";
+priceFinal = messageDiscount + " thank you for choosing us:" + '' + priceTicket.toFixed(2) + " €";
 console.log(priceFinal);
 
 document.getElementById("ticket").innerHTML = priceFinal;
